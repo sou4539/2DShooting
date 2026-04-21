@@ -1,10 +1,5 @@
 #include "Status.h"
 
-Status::Status()
-{
-	Init();
-}
-
 void Status::Init()
 {
 	m_ATK = 10.0f;

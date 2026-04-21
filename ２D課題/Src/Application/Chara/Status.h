@@ -3,7 +3,7 @@
 class Status
 {
 public:
-	Status();
+	Status() { Init(); }
 	~Status() {}
 	void Init();
 	void Update();
