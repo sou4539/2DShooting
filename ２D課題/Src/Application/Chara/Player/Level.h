@@ -1,4 +1,5 @@
 #pragma once
+#include "../../Static.h"
 
 class Status;
 
@@ -6,27 +7,43 @@ class Level
 {
 public:
 	Level() { Init(); }
-	~Level() {}
-	void Init();
+	~Level() { Release(); }
+	
 	void Update();
+	void Draw();
 
 private:
 	
-	/////////////////////////////////////////////////////
-	//static const 一覧
-	static const int Weapons_Slot_Max = 6;	//持てる武器の最大値
-	static const int Weapons_Kind = 2;		//武器種
-	static const int Weapons_Auto = 6;		//自動攻撃武器数
-	static const int Weapons_Buff = 14;		//バフ武器数
-	static const int Weapons_Lv_Max = 3;	//武器の最大レベル
-	static const int Weapons_View_Max = 3;	//一回のレベルアップで表示する装備の最大数
 	Status* m_status;
 	int now_Lv;
 	int Lv_Point;
-	
-	int Armor_Slot[Weapons_Slot_Max];
-	int Armor_Lv[Weapons_Lv_Max];
-	int Armor_View[Weapons_View_Max];
-	int Armor_Kind[Weapons_Kind];
-	
+	void Init();
+	void Release();
+
+	int Armor_Slot[Weapons_Slot_Max];				//装備スロット
+	int Armor_Lv[Weapons_Lv_Max];					//装備レベル
+	int Armor_View[Weapons_View_Max];				//表示する装備の数
+	int Armor_Kind[Weapons_Type][Weapons_Kinds];	//装備の種類
+
+	/*
+	キャラ強化系装備			001
+
+		撃破時に体力回復		001000
+		撃破時にゲージ回復		001001
+		体力アップ				001002
+		ダメージcrit			001003
+		弾反射					001004
+		ゲージ効率アップ		001005
+
+
+
+	自動攻撃装備				002
+
+		全方位弾				002000
+		貫通ビーム				002001
+		爆弾					002002
+		ダメージフィールド展開	002003
+		前方広範囲攻撃			002004
+		単体高火力				002005
+		*/
 };

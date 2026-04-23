@@ -25,7 +25,15 @@ void Level::Update()
 		for (int i = 0; i < Weapons_View_Max; i++)
 		{
 			//装備の表示
-			
+			Armor_View[i] = Armor_Kind[rand() % Weapons_Type][rand() % Weapons_Kinds];
 		}
 	}
+}
+
+void Level::Draw()
+{
+}
+
+void Level::Release()
+{
 }

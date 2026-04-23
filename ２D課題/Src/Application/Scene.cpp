@@ -1,8 +1,10 @@
 #include "main.h"
 #include "Scene.h"
 #include "Chara/Player/Player.h"
+#include "Chara/Enemy/Enemy.h"
 #include "Chara/Status.h"
 #include "Move/Control/Control.h"
+#include "Chara/Player/Bullet.h"
 
 Scene::Scene()
 {
@@ -18,18 +20,23 @@ void Scene::Draw2D()
 void Scene::Update()
 {
 	m_Player->Update();
+	m_Enemy->Update();
 	m_Status->Update();
 	m_Control->Update();
+	m_Bullet->Update();
 }
 
 void Scene::Init()
 {
 	m_Player = new Player();
+	m_Enemy = new Enemy();
 	m_Status = new Status();
 	m_Control = new Control();
-	m_Player->Init();
+	m_Bullet = new Bullet();
+
+
 	m_Status->Init();
-	m_Control->Init(m_Player, m_Status);
+	m_Control->Init(m_Player, m_Status, m_Bullet);
 	// ‰æ‘œ‚Ì“Ç‚Ýž‚Ýˆ—
 	//charaTex.Load("player.png");
 }
@@ -37,8 +44,7 @@ void Scene::Init()
 void Scene::Release()
 {
 	// ‰æ‘œ‚Ì‰ð•úˆ—
-	m_Player->Release();
-	//charaTex.Release();
+
 }
 
 void Scene::ImGuiUpdate()

@@ -7,7 +7,7 @@ void Player::Init()
 
 void Player::Update()
 {
-	m_PlayerMat = Math::Matrix::CreateTranslation(m_Pos.x, m_Pos.y, 0);
+	m_PlayerMat = Math::Matrix::CreateTranslation(m_PlayerPos.x, m_PlayerPos.y, 0);
 }
 
 void Player::Draw()

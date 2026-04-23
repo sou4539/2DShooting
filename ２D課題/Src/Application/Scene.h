@@ -1,8 +1,10 @@
 #pragma once
 
 class Player;
+class Enemy;
 class Status;
 class Control;
+class Bullet;
 
 
 class Scene
@@ -35,13 +37,16 @@ public:
 private:
 
 	Scene();
-
-	Player* m_Player;
-	// デバッグ用のステータス
-	Status* m_Status;
-
-	Control* m_Control;
-
+	// プレイヤー
+	Player* m_Player = nullptr;
+	// 敵
+	Enemy* m_Enemy = nullptr;
+	// ステータス
+	Status* m_Status = nullptr;
+	// 操作
+	Control* m_Control = nullptr;
+	// 弾
+	Bullet* m_Bullet = nullptr;
 public:
 	static Scene& GetInstance()
 	{
