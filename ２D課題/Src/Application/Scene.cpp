@@ -14,7 +14,7 @@ void Scene::Draw2D()
 {
 	m_Player->Draw();
 	// •¶Žš—ñ•\Ž¦
-	SHADER.m_spriteShader.DrawString(0, 0, "Hello World", Math::Vector4(1, 1, 0, 1));
+	//SHADER.m_spriteShader.DrawString(0, 0, "Hello World", Math::Vector4(1, 1, 0, 1));
 }
 
 void Scene::Update()

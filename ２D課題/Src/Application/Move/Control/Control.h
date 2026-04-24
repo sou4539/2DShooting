@@ -7,14 +7,24 @@
 class Control
 {
 public:
+    enum
+    {
+        Idle,
+        Right,
+        Left
+    };
     Control();
     ~Control() {}
     void Init(Player* player, Status* status, Bullet* bullet);
     void Update();
     void MovePlayer(Player& player, const Status& status, Bullet& bullet);
 
+   
+
 private:
     Status* m_Status;
     Player* m_Player;
 	Bullet* m_Bullet;
+
+    
 };
