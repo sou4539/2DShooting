@@ -17,8 +17,8 @@ private:
 	void Init();
 	void Release();
 
-	bool BulletFlg[BulletNum];
-	Math::Vector2 BulletPos[BulletNum];
-	Math::Matrix BulletMat[BulletNum];
-	KdTexture BulletTex[BulletNum];
+	bool BulletFlg[Bullet_Max];
+	Math::Vector2 BulletPos[Bullet_Max];
+	Math::Matrix BulletMat[Bullet_Max];
+	KdTexture BulletTex[Bullet_Max];
 };

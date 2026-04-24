@@ -2,7 +2,7 @@
 
 void Bullet::Init()
 {
-	for (int b = 0; b < BulletNum; b++)
+	for (int b = 0; b < Bullet_Max; b++)
 	{
 		BulletFlg[b] = false;
 		BulletPos[b] = {};
@@ -12,7 +12,7 @@ void Bullet::Init()
 
 void Bullet::Update()
 {
-	for (int b = 0; b < BulletNum; b++)
+	for (int b = 0; b < Bullet_Max; b++)
 	{
 		if (BulletFlg[b])
 		{
@@ -28,7 +28,7 @@ void Bullet::Update()
 
 void Bullet::Draw()
 {
-	for (int b = 0; b < BulletNum; b++)
+	for (int b = 0; b < Bullet_Max; b++)
 	{
 		if (BulletFlg[b])
 		{
@@ -40,7 +40,7 @@ void Bullet::Draw()
 
 bool Bullet::GetBulletAlive(int i)
 {
-	for (int b = 0; b < BulletNum; b++)
+	for (int b = 0; b < Bullet_Max; b++)
 	{
 		if (BulletFlg[b])
 		{
@@ -52,7 +52,7 @@ bool Bullet::GetBulletAlive(int i)
 
 void Bullet::Release()
 {
-	for (int b = 0; b < BulletNum; b++)
+	for (int b = 0; b < Bullet_Max; b++)
 	{
 		BulletTex[b].Release();
 	}

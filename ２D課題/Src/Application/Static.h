@@ -12,7 +12,7 @@ static const int Enemy_Max = 10;			//敵の最大数
 //プレイヤー
 static const int PlayerHeart = 16;			//プレイヤーの当たり判定のサイズ
 //弾
-static const int BulletNum = 100;			//弾の最大数
+static const int Bullet_Max = 100;			//弾の最大数
 static const int BulletHeart = 10;			//弾の当たり判定のサイズ
 //Windowサイズ
 static const int WindowWidth = 1280 / 2;	//ウィンドウの幅

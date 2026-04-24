@@ -49,7 +49,7 @@ void Control::MovePlayer(Player& player, const Status& status, Bullet& bullet)
     {
 		//pos = { 0,0 };//デモ用にプレイヤーの位置をリセット
         // 弾を発射する処理を追加
-        for (int b = 0; b < BulletNum; b++)
+        for (int b = 0; b < Bullet_Max; b++)
         {
             if (!m_Bullet->GetBulletAlive(b))
             {
